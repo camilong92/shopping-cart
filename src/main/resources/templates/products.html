@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+<body class="body_product">
+	<div th:replace="common/header :: navbar"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4" data-th-each="product : ${productsList}">
+				<div class="card">
+					<img class="card-img-top" src="${product.image}"
+						alt="Card image cap" />
+					<div class="card-body">
+						<h5 class="card-title" th:text="${product.name}"></h5>
+						<label for="male"><b>Description:</b></label>
+						<p class="card-text" th:text="${product.description}"></p>
+						<label for="male"><b>Price:</b></label>
+						<p th:text="${product.price}"></p>
+					</div>
+					<div class="card-body">
+						<a href="#" class="btn btn-secondary btn-lg active" role="button"
+							aria-pressed="true">ADD CART</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="common/header :: footer-common"></div>
+	<div th:replace="common/header :: body_bottom-scripts"></div>
+</body>
+</html>

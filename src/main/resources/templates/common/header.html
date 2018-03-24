@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="common-header">
+<title>Shopping Cart</title>
+<meta charset="utf-8" />
+<link rel="stylesheet/less" type="text/css" href="./css/styles.less" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous" />
+</head>
+<body>
+	<div th:fragment="navbar">
+		<div class="container container-navbar">
+			<nav class="navbar navbar-expand-md fixed-top bg-dark">
+				<a class="navbar-brand" href="/">Shopping Cart Net-W</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item active"><a class="nav-link" href="/">Home
+								<span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="/products"
+							id="navbarDropdownMenuLink" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false" > Category </a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+								<div class ="container" data-th-each="groupProduct: ${groupProductList}" > 
+									<a class="dropdown-item" th:text="${groupProduct.name}" href="#"></a> 
+								</div>
+ 							</div> 
+						</li>
+						<li class="nav-item"><a class="nav-link" href="/cartShopping">
+								Shopping Cart</a></li>
+						<li class="nav-item"><a class="nav-link" href="/products">
+								All Products</a></li>
+								
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div th:fragment="footer-common">		
+			<footer class="footer bg-dark">
+				<div class="container">
+					<span class="text-muted">E-COMMERCE NETW</span>
+				</div>
+			</footer>
+	</div>
+	<div th:fragment="body_bottom-scripts">
+		<script
+			src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js"></script>
+
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
+	</div>
+</body>
+</html>
