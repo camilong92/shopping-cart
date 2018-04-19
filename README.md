@@ -1,2 +1,2 @@
 # shopping-cart
-Developed with spring boot, thymeleaf, bootstrap 4
+Developed e-commerce app with spring boot, thymeleaf, bootstrap 4
